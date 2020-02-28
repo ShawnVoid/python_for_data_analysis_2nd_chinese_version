@@ -170,7 +170,15 @@ Out[32]: array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
 
 表4-1列出了一些数组创建函数。由于NumPy关注的是数值计算，因此，如果没有特别指定，数据类型基本都是float64（浮点数）。
 
-![表4-1 数组创建函数](http://upload-images.jianshu.io/upload_images/7178691-78ab11f67e7077a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+|函数|说明|
+|array |将输入数据（列表、元组、数组或其它序列类型）转换为ndarray。要么推断出dtype，要么特别指定dtype。默认直接复制输入数据 |
+|asarray |将输入转换为ndarray，如果输入本身就是一个ndarray就不进行复制 |
+|arange |类似于内置range，但返回的是一个ndarray而不是列表 |
+|ones, ones_like |根据指定的形状和dtype创建一个全1的数组。one_like以另一个数组为参数，并根据其形状和dtype创建一个全1数组 |
+|zeros, zeros_like |类似于ones和ones_like，只不过产生的是全0数组而已 |
+|empty, empty_like |创建新数组，只分配内存空间但不填充任何值 |
+|full, full_like |用fill value中的所有值，根据制定的形状和dtype创建一个数组。full_like使用另一个数组，用相同的形状和dtype创建 |
+|eye, identity |创建一个正方形的N × N单位矩阵（对角线为1，其余为0） |
 
 ## ndarray的数据类型
 dtype（数据类型）是一个特殊的对象，它含有ndarray将一块内存解释为特定数据类型所需的信息：
