@@ -199,9 +199,21 @@ dtype是NumPy灵活交互其它系统的源泉之一。多数情况下，它们�
 
 >笔记：记不住这些NumPy的dtype也没关系，新手更是如此。通常只需要知道你所处理的数据的大致类型是浮点数、复数、整数、布尔值、字符串，还是普通的Python对象即可。当你需要控制数据在内存和磁盘中的存储方式时（尤其是对大数据集），那就得了解如何控制存储类型。
 
-![](http://upload-images.jianshu.io/upload_images/7178691-2f2d7406a8bc076c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-![](http://upload-images.jianshu.io/upload_images/7178691-5cc31115615737b7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+|类型|类型代码|说明|
+|------|------|------|
+|int8、uint8|i1、u1|有符号和无符号的8位（1个字节）整形|
+|int16、uint16|i2、u2|有符号和无符号的16位（2个字节）整形|
+|int32、uint32|i4、u4|有符号和无符号的32位（4个字节）整形|
+|int64、uint64|i8、u8|有符号和无符号的64位（8个字节）整形|
+|float16|f2|半精度浮点数|
+|float32|f4或f|标准的单精度浮点数，与C的float兼容|
+|float64|f8或d|标准的双精度浮点数，与C的double和Python的float对象兼容|
+|float128|f16或g|扩展精度浮点数|
+|complex64、complex128、complex256|c8、c16、c32|分别用两个32位、64位或128位浮点数表示的复数|
+|bool|?|存储True和False值的布尔类型|
+|object|O|Python对象类型|
+|string_|S|固定长度的字符串类型（每个字符1个字节。例如要创建一个长度为10的字符串，应使用S10）|
+|unicode_|U|固定长度的unicode类型（字节数由平台决定。跟字符串的定义方式一样，如U10）|
 
 你可以通过ndarray的astype方法明确地将一个数组从一个dtype转换成另一个dtype：
 ```python
